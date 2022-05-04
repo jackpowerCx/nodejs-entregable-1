@@ -1,13 +1,17 @@
 const express = require('express');
 
-const { getAllRepairs, creatRepair, searchIdrepairs, cancelledRepair, updateReapir } = require('../controllers/repairsController');
+//middlewares
+const { repairStatus } = require('../middlewares/repairsMiddlewares')
+const { creatRepairValitions, checkVlidations } = require('../middlewares/validationsMiddlewares');
+//controllers
+const { getAllRepairs, creatRepair, searchIdrepairs, cancelledRepair, updateRepair } = require('../controllers/repairsController');
 
 const router = express.Router();
 
 router.get('/', getAllRepairs);
-router.post('/', creatRepair);
-router.get('/:id', searchIdrepairs);
-router.delete('/:id', cancelledRepair);
-router.patch('/:id', updateReapir);
+router.post('/', creatRepairValitions, checkVlidations, creatRepair);
+router.get('/:id', repairStatus, searchIdrepairs);
+router.delete('/:id', repairStatus, cancelledRepair);
+router.patch('/:id', repairStatus, updateRepair);
 
 module.exports = { repairsRouter: router }

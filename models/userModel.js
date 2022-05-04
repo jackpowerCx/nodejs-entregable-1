@@ -7,29 +7,29 @@ const Users = db.define('user', {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        allowNull: false
+        allowNull: false,
     },
     name: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
     },
     email: {
         type: DataTypes.STRING,
         unique: true,
-        allowNull: false
+        allowNull: false,
     },
     password: {
         type: DataTypes.STRING,
         unique: true,
-        allowNull: false
+        allowNull: false,
     },
     role: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
     },
     status: {
         type: DataTypes.STRING,
-        defaultValue: 'active'
+        defaultValue: 'active',
 
     }
 });

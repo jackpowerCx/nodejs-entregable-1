@@ -7,19 +7,28 @@ const Repairs = db.define('repair', {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        allowNull: false
+        allowNull: false,
     },
     date: {
         type: DataTypes.DATE,
-        allowNull: false
+        allowNull: false,
+    },
+    computerNumber:{
+        type:DataTypes.STRING,
+        allowNull: false,
+
+    },
+    comments:{
+        type: DataTypes.STRING,
+        allowNull: false,
     },
     status: {
         type: DataTypes.STRING,
-        defaultValue: 'pending'
+        defaultValue: 'pending',
     },
     userId: {
         type: DataTypes.INTEGER,    
-        allowNull: false
+        allowNull: false,
     }
 });
 module.exports = { Repairs }
