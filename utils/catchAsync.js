@@ -4,4 +4,4 @@ const catchAllAsync = fn => {
     };
 };
 
-module.exports ={catchAllAsync};
+module.exports = { catchAllAsync };

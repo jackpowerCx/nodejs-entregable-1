@@ -23,7 +23,7 @@ app.use('/api/v1/repairs', repairsRouter);
 app.use('/api/v1/repairs/:id', repairsRouter);
 
 //global error handler
-app.use('*',globalErrorHandler);
+app.use('*', globalErrorHandler);
 
 
 const PORT = process.env.PORT || 4500;
